@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace UnityStandardAssets._2D
 {
@@ -19,6 +21,15 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+
+        //Freetale Code
+        public AudioClip JumpSound;
+        public AudioClip DamageSound;
+        public AudioClip FinishSound;
+
+        public Text restartText;
+
+        public int NobiHP = 3;
 
         private void Awake()
         {
@@ -98,6 +109,20 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
+
+// Hold for a while Need to test somethings.
+/*        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.tag == "DamageObject")
+            {
+                if(NobiHP <= 0)
+                {
+                    restartText.enabled = true;
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
+*/
 
 
         private void Flip()

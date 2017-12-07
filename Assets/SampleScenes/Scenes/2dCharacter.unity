@@ -17520,7 +17520,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 920846914}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3d7b34a3bb2d4e4b926e7e729d3d410, type: 3}
   m_Name: 
@@ -17544,6 +17544,10 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
+  JumpSound: {fileID: 0}
+  DamageSound: {fileID: 0}
+  FinishSound: {fileID: 0}
+  restartText: {fileID: 0}
 --- !u!50 &920846918
 Rigidbody2D:
   serializedVersion: 4
