@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 
-[RequireComponent(typeof (GUITexture))]
+using TMPro;
+
+[RequireComponent(typeof (TextMeshPro))]
 public class ForcedReset : MonoBehaviour
 {
     private void Update()

@@ -30,7 +30,7 @@ namespace UnityStandardAssets._2D
 
         [SerializeField] private Text restartText;
 
-        [SerializeField] private int NobiHP = 3;
+        [SerializeField] private int NobiHP = 3; // Nobita HP
 
         private void Awake()
         {
@@ -61,7 +61,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        public void Move(float move, bool crouch, bool jump)
+        public void Move(float move, bool crouch, bool jump, bool shoot)
         {
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
@@ -70,6 +70,14 @@ namespace UnityStandardAssets._2D
                 if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
                 {
                     crouch = true;
+                }
+            }
+
+            if(!shoot && m_Anim.GetBool("Shoot"))
+            {
+                if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+                {
+                    shoot = true;
                 }
             }
 

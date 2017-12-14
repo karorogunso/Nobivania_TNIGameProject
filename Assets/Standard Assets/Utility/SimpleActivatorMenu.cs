@@ -1,13 +1,15 @@
 using System;
 using UnityEngine;
 
+using TMPro; //Using TextMeshPro API
+
 namespace UnityStandardAssets.Utility
 {
     public class SimpleActivatorMenu : MonoBehaviour
     {
         // An incredibly simple menu which, when given references
         // to gameobjects in the scene
-        public GUIText camSwitchButton; //remove soon on Next Unity Release.
+        public TextMeshPro camSwitchButton; //remove soon on Next Unity Release.
         public GameObject[] objects;
 
 

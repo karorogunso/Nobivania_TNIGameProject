@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using TMPro;
+
 using UnityStandardAssets.CrossPlatformInput;
 
 
@@ -13,7 +15,7 @@ public class Loading : MonoBehaviour {
     [SerializeField]
     private int scene;
     [SerializeField]
-    private Text loadingText;
+    private TextMeshPro loadingText;
 
 
     // Updates once per frame
