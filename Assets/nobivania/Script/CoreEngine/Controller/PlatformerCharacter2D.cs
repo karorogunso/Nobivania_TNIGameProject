@@ -60,7 +60,6 @@ namespace UnityStandardAssets._2D
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
         }
 
-
         public void Move(float move, bool crouch, bool jump, bool shoot)
         {
             // If crouching, check to see if the character can stand up
@@ -118,6 +117,13 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
+
+
+
+        public void HitProtection(Collider2D collision){
+            if(collision.tag == "")
+        }
+
 
 // Hold for a while Need to test somethings.
 /*        private void OnTriggerEnter2D(Collider2D collision)
