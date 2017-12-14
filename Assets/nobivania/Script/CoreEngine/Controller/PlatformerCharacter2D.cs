@@ -32,6 +32,18 @@ namespace UnityStandardAssets._2D
 
         [SerializeField] private int NobiHP = 3; // Nobita HP
 
+        //Xureality Code
+        //commented out is for future use
+        //[SerializeField] private float FireRate = 0f;
+        //[SerializeField] private float Damage = 0f;
+        [SerializeField] private LayerMask DoNotHit;
+        [SerializeField] private GameObject Shot;
+        [SerializeField] private float ShotSpeed;
+        [SerializeField] private Transform shotSpawn;
+        //private float TimeToFire = 0f;
+        private GameObject bullet;
+
+
         private void Awake()
         {
             // Setting up references.
@@ -116,12 +128,29 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
+
+            //Xur shooting code
+            if (shoot)// && Time.time > TimeToFire)
+            {
+                //TimeToFire = Time.time + FireRate;
+                bullet = (GameObject)Instantiate(Shot, shotSpawn.position, shotSpawn.rotation);
+                if (m_FacingRight) 
+                {
+                    bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * ShotSpeed;
+                }
+                else
+                {
+                    bullet.GetComponent<Rigidbody2D>().velocity = -bullet.transform.right * ShotSpeed;
+                }
+                //setbool currently invisible due to no animation
+                m_Anim.SetBool("Shoot", shoot);
+            }
         }
 
 
 
         public void HitProtection(Collider2D collision){
-            if(collision.tag == "")
+            //if (collision.tag == "")
         }
 
 
