@@ -83,14 +83,14 @@ namespace UnityStandardAssets._2D
                     crouch = true;
                 }
             }
-
+            /*
             if(!shoot && m_Anim.GetBool("Shoot"))
             {
                 if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
                 {
                     shoot = true;
                 }
-            }
+            }*/
 
             // Set whether or not the character is crouching in the animator
             m_Anim.SetBool("Crouch", crouch);
@@ -143,7 +143,7 @@ namespace UnityStandardAssets._2D
                     bullet.GetComponent<Rigidbody2D>().velocity = -bullet.transform.right * ShotSpeed;
                 }
                 //setbool currently invisible due to no animation
-                m_Anim.SetBool("Shoot", shoot);
+                //m_Anim.SetBool("Shoot", shoot);
             }
         }
 

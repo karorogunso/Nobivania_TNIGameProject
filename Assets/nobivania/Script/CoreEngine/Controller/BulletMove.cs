@@ -13,4 +13,10 @@ public class BulletMove : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    // Kill bullet once offscreen
+    void OnBecameInvisible () {
+        //Debug.Log("bullet offscreen");
+        Destroy(gameObject);
+    }
 }
