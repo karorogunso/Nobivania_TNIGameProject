@@ -26,6 +26,7 @@ public class SkyController : MonoBehaviour {
             SkyCollection.Add(Instantiate(SkyObject, position, Quaternion.identity));
             position.x -= Width;
         }
+        SkyCollection.Reverse();
         InvokeRepeating("CreateOne", SpawnTime, SpawnTime);
 	}
 	
@@ -47,7 +48,7 @@ public class SkyController : MonoBehaviour {
     void CreateOne()
     {
         Vector3 oldOne = SkyCollection[SkyCollection.Count - 1].transform.position;
-        oldOne.x += 10;
+        oldOne.x += Width;
         SkyCollection.Add(Instantiate(SkyObject, oldOne, Quaternion.identity));
     }
 }
