@@ -46,6 +46,8 @@ public class SkyController : MonoBehaviour {
 
     void CreateOne()
     {
-        SkyCollection.Add(Instantiate(SkyObject, SpawnPoint.position, Quaternion.identity));
+        Vector3 oldOne = SkyCollection[SkyCollection.Count - 1].transform.position;
+        oldOne.x += 10;
+        SkyCollection.Add(Instantiate(SkyObject, oldOne, Quaternion.identity));
     }
 }

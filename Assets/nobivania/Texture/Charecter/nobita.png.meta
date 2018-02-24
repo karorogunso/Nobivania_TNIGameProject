@@ -1,9 +1,19 @@
 fileFormatVersion: 2
 guid: 353e09d08feee3a48af70d1cb2682358
-timeCreated: 1518252384
+timeCreated: 1519459051
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: nobita_0
+    21300002: nobita_1
+    21300004: nobita_2
+    21300006: nobita_3
+    21300008: nobita_4
+    21300010: nobita_5
+    21300012: nobita_6
+    21300014: nobita_7
+    21300016: nobita_8
+    21300018: nobita_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,10 +76,427 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: nobita_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 278
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 278
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_2
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 278
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 139
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 139
+        width: 77
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 139
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_6
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 139
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nobita_9
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 95
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -168, y: -208.5}
+      - {x: -169, y: -205.5}
+      - {x: -176, y: -205.5}
+      - {x: -177, y: -208.5}
+    - - {x: -167, y: -206.5}
+      - {x: -166, y: -208.5}
+      - {x: -161, y: -208.5}
+      - {x: -160, y: -207.5}
+      - {x: -161, y: -204.5}
+      - {x: -165, y: -204.5}
+    - - {x: 78, y: -154.5}
+      - {x: 67, y: -157.5}
+      - {x: 66, y: -149.5}
+      - {x: 66, y: -151.5}
+      - {x: 68, y: -153.5}
+      - {x: 71, y: -155.5}
+      - {x: 86, y: -141.5}
+      - {x: 84, y: -58.5}
+      - {x: 13, y: -58.5}
+      - {x: 13, y: -208.5}
+      - {x: 90, y: -208.5}
+      - {x: 90, y: -164.5}
+      - {x: 87, y: -157.5}
+    - - {x: -92, y: -204.5}
+      - {x: -89, y: -206.5}
+      - {x: -82, y: -206.5}
+      - {x: -80, y: -205.5}
+      - {x: -80, y: -202.5}
+      - {x: -81, y: -200.5}
+      - {x: -86, y: -199.5}
+      - {x: -92, y: -199.5}
+    - - {x: 18, y: -201.5}
+      - {x: 19, y: -204.5}
+      - {x: 22, y: -204.5}
+      - {x: 24, y: -202.5}
+      - {x: 23, y: -199.5}
+      - {x: 20, y: -199.5}
+    - - {x: -123, y: -100.5}
+      - {x: -174, y: -100.5}
+      - {x: -190, y: -120.5}
+      - {x: -190, y: -197.5}
+      - {x: -179, y: -201.5}
+      - {x: -107, y: -201.5}
+      - {x: -102, y: -196.5}
+      - {x: -95, y: -179.5}
+      - {x: -95, y: -113.5}
+    - - {x: -27, y: -194.5}
+      - {x: -30, y: -195.5}
+      - {x: -30, y: -199.5}
+      - {x: -28, y: -201.5}
+      - {x: -24, y: -201.5}
+      - {x: -23, y: -200.5}
+      - {x: -23, y: -194.5}
+    - - {x: -79, y: -105.5}
+      - {x: -97, y: -121.5}
+      - {x: -97, y: -184.5}
+      - {x: -91, y: -200.5}
+      - {x: 3, y: -200.5}
+      - {x: 3, y: -105.5}
+    - - {x: -99, y: -185.5}
+      - {x: -100, y: -188.5}
+      - {x: -100, y: -194.5}
+      - {x: -98, y: -196.5}
+      - {x: -95, y: -195.5}
+      - {x: -93, y: -185.5}
+      - {x: -96, y: -183.5}
+    - - {x: -91, y: -196.5}
+      - {x: -88, y: -195.5}
+      - {x: -88, y: -192.5}
+      - {x: -91, y: -191.5}
+      - {x: -93, y: -193.5}
+    - - {x: -18, y: -169.5}
+      - {x: -21, y: -172.5}
+      - {x: -20, y: -175.5}
+      - {x: -15, y: -175.5}
+      - {x: -13, y: -174.5}
+      - {x: -13, y: -171.5}
+      - {x: -14, y: -169.5}
+    - - {x: -100, y: -174.5}
+      - {x: -97, y: -173.5}
+      - {x: -97, y: -170.5}
+      - {x: -100, y: -169.5}
+      - {x: -102, y: -171.5}
+    - - {x: 7, y: -152.5}
+      - {x: 5, y: -154.5}
+      - {x: 3, y: -159.5}
+      - {x: 3, y: -165.5}
+      - {x: 8, y: -165.5}
+      - {x: 11, y: -161.5}
+      - {x: 11, y: -154.5}
+      - {x: 10, y: -152.5}
+    - - {x: -103, y: -146.5}
+      - {x: -103, y: -159.5}
+      - {x: -101, y: -161.5}
+      - {x: -98, y: -160.5}
+      - {x: -97, y: -156.5}
+      - {x: -97, y: -149.5}
+      - {x: -100, y: -145.5}
+    - - {x: 68, y: -156.5}
+      - {x: 69, y: -159.5}
+      - {x: 72, y: -159.5}
+      - {x: 74, y: -157.5}
+      - {x: 73, y: -154.5}
+      - {x: 70, y: -154.5}
+    - - {x: 1, y: -141.5}
+      - {x: 6, y: -147.5}
+      - {x: 8, y: -147.5}
+      - {x: 10, y: -145.5}
+      - {x: 7, y: -138.5}
+      - {x: 3, y: -137.5}
+      - {x: 1, y: -139.5}
+    - - {x: 27, y: -144.5}
+      - {x: 30, y: -143.5}
+      - {x: 30, y: -140.5}
+      - {x: 27, y: -139.5}
+      - {x: 25, y: -141.5}
+    - - {x: -22, y: -138.5}
+      - {x: -18, y: -138.5}
+      - {x: -11, y: -135.5}
+      - {x: -11, y: -132.5}
+      - {x: -12, y: -128.5}
+      - {x: -17, y: -128.5}
+      - {x: -22, y: -130.5}
+    - - {x: 28, y: -121.5}
+      - {x: 24, y: -127.5}
+      - {x: 24, y: -133.5}
+      - {x: 27, y: -133.5}
+      - {x: 33, y: -129.5}
+      - {x: 34, y: -124.5}
+      - {x: 31, y: -121.5}
+    - - {x: -89, y: -127.5}
+      - {x: -86, y: -126.5}
+      - {x: -86, y: -123.5}
+      - {x: -89, y: -122.5}
+      - {x: -91, y: -124.5}
+    - - {x: -26, y: -114.5}
+      - {x: -28, y: -116.5}
+      - {x: -28, y: -118.5}
+      - {x: -23, y: -125.5}
+      - {x: -21, y: -127.5}
+      - {x: -19, y: -127.5}
+      - {x: -17, y: -125.5}
+      - {x: -17, y: -119.5}
+      - {x: -19, y: -116.5}
+    - - {x: -185, y: -120.5}
+      - {x: -183, y: -122.5}
+      - {x: -180, y: -121.5}
+      - {x: -180, y: -118.5}
+      - {x: -182, y: -116.5}
+      - {x: -185, y: -117.5}
+    - - {x: -75, y: -105.5}
+      - {x: -84, y: -114.5}
+      - {x: -84, y: -117.5}
+      - {x: -82, y: -118.5}
+      - {x: -79, y: -118.5}
+      - {x: -71, y: -111.5}
+      - {x: -71, y: -107.5}
+      - {x: -72, y: -105.5}
+    - - {x: -40, y: -108.5}
+      - {x: -32, y: -114.5}
+      - {x: -23, y: -114.5}
+      - {x: -22, y: -113.5}
+      - {x: -22, y: -110.5}
+      - {x: -25, y: -105.5}
+      - {x: -31, y: -104.5}
+      - {x: -40, y: -104.5}
+    - - {x: 15, y: -95.5}
+      - {x: 12, y: -95.5}
+      - {x: 9, y: -97.5}
+      - {x: 9, y: -106.5}
+      - {x: 13, y: -110.5}
+      - {x: 17, y: -110.5}
+      - {x: 19, y: -108.5}
+      - {x: 19, y: -102.5}
+    - - {x: 82, y: -100.5}
+      - {x: 84, y: -102.5}
+      - {x: 87, y: -101.5}
+      - {x: 88, y: -96.5}
+      - {x: 86, y: -94.5}
+      - {x: 83, y: -95.5}
+    - - {x: 8, y: -87.5}
+      - {x: 8, y: -89.5}
+      - {x: 12, y: -93.5}
+      - {x: 15, y: -92.5}
+      - {x: 16, y: -83.5}
+      - {x: 14, y: -81.5}
+      - {x: 11, y: -82.5}
+    - - {x: -189, y: 62.5}
+      - {x: -190, y: 60.5}
+      - {x: -190, y: -61.5}
+      - {x: -177, y: -89.5}
+      - {x: -139, y: -89.5}
+      - {x: -133, y: -88.5}
+      - {x: -102, y: -65.5}
+      - {x: -102, y: -23.5}
+      - {x: -122, y: 62.5}
+    - - {x: -95, y: 70.5}
+      - {x: -95, y: -15.5}
+      - {x: -78, y: -87.5}
+      - {x: -33, y: -87.5}
+      - {x: -14, y: -21.5}
+      - {x: -14, y: 61.5}
+      - {x: -43, y: 70.5}
+    - - {x: 55, y: -61.5}
+      - {x: 56, y: -64.5}
+      - {x: 60, y: -64.5}
+      - {x: 62, y: -62.5}
+      - {x: 61, y: -59.5}
+      - {x: 57, y: -59.5}
+    - - {x: 181, y: 56.5}
+      - {x: 164, y: 60.5}
+      - {x: 130, y: 60.5}
+      - {x: 98, y: 39.5}
+      - {x: 98, y: 16.5}
+      - {x: 100, y: 6.5}
+      - {x: 126, y: -0.5}
+      - {x: 173, y: -0.5}
+      - {x: 181, y: 2.5}
+      - {x: 190, y: 19.5}
+      - {x: 190, y: 45.5}
+    - - {x: 32, y: 45.5}
+      - {x: 30, y: 40.5}
+      - {x: 30, y: 17.5}
+      - {x: 33, y: 16.5}
+      - {x: 69, y: 16.5}
+      - {x: 72, y: 19.5}
+      - {x: 72, y: 42.5}
+      - {x: 66, y: 45.5}
+    - - {x: 76, y: 65.5}
+      - {x: 74, y: 63.5}
+      - {x: 74, y: 61.5}
+      - {x: 76, y: 59.5}
+      - {x: 78, y: 59.5}
+      - {x: 80, y: 61.5}
+      - {x: 80, y: 63.5}
+      - {x: 78, y: 65.5}
+    - - {x: -183, y: 205.5}
+      - {x: -190, y: 198.5}
+      - {x: -190, y: 176.5}
+      - {x: -181, y: 146.5}
+      - {x: -187, y: 78.5}
+      - {x: -188, y: 66.5}
+      - {x: -106, y: 66.5}
+      - {x: -106, y: 138.5}
+      - {x: -120, y: 205.5}
+    - - {x: -94, y: 208.5}
+      - {x: -94, y: 112.5}
+      - {x: -88, y: 72.5}
+      - {x: -75, y: 66.5}
+      - {x: -28, y: 66.5}
+      - {x: -26, y: 79.5}
+      - {x: -26, y: 205.5}
+      - {x: -30, y: 208.5}
+    - - {x: 1, y: 208.5}
+      - {x: -2, y: 191.5}
+      - {x: -5, y: 166.5}
+      - {x: -7, y: 154.5}
+      - {x: -7, y: 111.5}
+      - {x: 2, y: 99.5}
+      - {x: 18, y: 99.5}
+      - {x: 11, y: 99.5}
+      - {x: 5, y: 97.5}
+      - {x: 1, y: 80.5}
+      - {x: 4, y: 66.5}
+      - {x: 76, y: 66.5}
+      - {x: 76, y: 198.5}
+      - {x: 73, y: 208.5}
     physicsShape: []
   spritePackingTag: 
   userData: 
