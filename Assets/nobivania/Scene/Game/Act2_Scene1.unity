@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 122427955}
   - component: {fileID: 122427954}
   - component: {fileID: 122427953}
+  - component: {fileID: 122427956}
   m_Layer: 0
   m_Name: Remote
   m_TagString: Untagged
@@ -212,6 +213,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &122427956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122427952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2577597922135bf41bc2e0a76539b650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 5
 --- !u!1001 &213098177
 Prefab:
   m_ObjectHideFlags: 0
@@ -381,6 +394,7 @@ GameObject:
   - component: {fileID: 901571254}
   - component: {fileID: 901571253}
   - component: {fileID: 901571252}
+  - component: {fileID: 901571255}
   m_Layer: 0
   m_Name: Air Cannon
   m_TagString: Untagged
@@ -470,6 +484,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &901571255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901571251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2577597922135bf41bc2e0a76539b650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 4
 --- !u!1 &902327068
 GameObject:
   m_ObjectHideFlags: 0
