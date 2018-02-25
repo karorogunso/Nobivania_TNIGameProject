@@ -133,7 +133,9 @@ namespace UnityStandardAssets._2D
             if (shoot)// && Time.time > TimeToFire)
             {
                 //TimeToFire = Time.time + FireRate;
-                bullet = (GameObject)Instantiate(Shot, shotSpawn.position, shotSpawn.rotation);
+
+                //This code below make Shoot Engine Bug again.
+                //bullet = (GameObject)Instantiate(Shot, shotSpawn.position, shotSpawn.rotation);
                 if (m_FacingRight) 
                 {
                     bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * ShotSpeed;
