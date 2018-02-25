@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 353e09d08feee3a48af70d1cb2682358
-timeCreated: 1519459051
+timeCreated: 1519533888
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -80,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,10 +95,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 278
-        width: 95
+        width: 81
         height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -107,12 +107,12 @@ TextureImporter:
       name: nobita_1
       rect:
         serializedVersion: 2
-        x: 95
-        y: 278
-        width: 95
-        height: 139
+        x: 98
+        y: 277
+        width: 64
+        height: 140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,12 +121,12 @@ TextureImporter:
       name: nobita_2
       rect:
         serializedVersion: 2
-        x: 190
-        y: 278
-        width: 95
+        x: 188
+        y: 277
+        width: 77
         height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,11 +136,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 139
-        width: 95
-        height: 139
+        y: 120
+        width: 88
+        height: 149
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,11 +150,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 97
-        y: 139
-        width: 77
-        height: 139
+        y: 122
+        width: 76
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: nobita_5
       rect:
         serializedVersion: 2
-        x: 190
-        y: 139
-        width: 95
-        height: 139
+        x: 221
+        y: 228
+        width: 41
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,12 +177,12 @@ TextureImporter:
       name: nobita_6
       rect:
         serializedVersion: 2
-        x: 285
-        y: 139
-        width: 95
-        height: 139
+        x: 284
+        y: 208
+        width: 96
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,10 +193,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 95
-        height: 139
+        width: 94
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,10 +207,10 @@ TextureImporter:
         serializedVersion: 2
         x: 95
         y: 0
-        width: 95
-        height: 139
+        width: 96
+        height: 107
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -221,10 +221,10 @@ TextureImporter:
         serializedVersion: 2
         x: 190
         y: 0
-        width: 95
-        height: 139
+        width: 92
+        height: 143
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
