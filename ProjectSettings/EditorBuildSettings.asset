@@ -6,29 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/nobivania/Scene/Game/Act1_Scene1.unity
+    guid: a5d01f1b1ba9c41449cf3a2434c88554
+  - enabled: 1
     path: Assets/nobivania/Scene/DevPlayground.unity
     guid: 31f79b9fcc3fa1648bde0ed6fe0df2b3
   - enabled: 1
     path: Assets/nobivania/Scene/MainMenu.unity
     guid: 7fd099d21e1de1d4f971e914127f1119
   - enabled: 1
-    path: Assets/nobivania/Scene/Game/Act1_Scene1.unity
-    guid: a5d01f1b1ba9c41449cf3a2434c88554
-  - enabled: 1
-    path: Assets/nobivania/Scene/Game/Act1_Scene2.unity
-    guid: e35888174be597d43809690012b52eb7
-  - enabled: 1
     path: Assets/nobivania/Scene/Game/Act2_Scene1.unity
     guid: 78a09acf840cbb144a3baa6cba5852c2
   - enabled: 1
-    path: Assets/nobivania/Scene/Game/Act2_Scene2.unity
-    guid: 9c8c3501bb74b2840b69ce3652e241cd
-  - enabled: 1
     path: Assets/nobivania/Scene/Game/Act3_Scene1.unity
     guid: e775237c49e3c4447b06854c25598c79
-  - enabled: 1
-    path: Assets/nobivania/Scene/Game/Act3_Scene2.unity
-    guid: 30d38555e73c15149af1351cacae03f6
   - enabled: 1
     path: Assets/nobivania/Scene/Game/Ending.unity
     guid: 6ee69e9426c0eea418bd20513acda163
