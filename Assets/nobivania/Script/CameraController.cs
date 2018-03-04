@@ -8,6 +8,9 @@ public class CameraController : MonoBehaviour {
     
     public float Smooth = 0.9f;
     private Vector3 FixPoint;
+
+    public bool IsCutScene = false;
+
 	// Use this for initialization
 	void Start () {
         FixPoint = transform.position;
@@ -19,9 +22,12 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float x = Player.position.x;
-        Vector3 target = transform.position;
-        target.x = Mathf.Lerp(transform.position.x,x,Smooth);
-        transform.position = target;
+        if (!IsCutScene)
+        {
+            float x = Player.position.x;
+            Vector3 target = transform.position;
+            target.x = Mathf.Lerp(transform.position.x, x, Smooth);
+            transform.position = target;
+        }
 	}
 }
