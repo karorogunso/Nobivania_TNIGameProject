@@ -142,9 +142,12 @@ public class PlayerController : MonoBehaviour
         
         if(collision.gameObject.name == "Boat")
         {
-            var boatController = collision.gameObject.GetComponent<BoatController>();
-            boatController.OnPlayerAttach();
-            animator.Play("Idle");
+            if(ItemController.Current == ItemType.RemoteControl)
+            {
+                var boatController = collision.gameObject.GetComponent<BoatController>();
+                boatController.OnPlayerAttach();
+                animator.Play("Idle");
+            }
         }
 
         if(collision.tag == "Enemy")
