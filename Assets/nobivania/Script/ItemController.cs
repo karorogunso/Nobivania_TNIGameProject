@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ItemController : MonoBehaviour {
 
     public ItemType Type;
+    
     public static ItemType Current;
 
     public AnimationCurve FloatingCurve;
@@ -26,13 +27,10 @@ public class ItemController : MonoBehaviour {
     }
 #endif
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("collosion2d" + collision.gameObject.tag);
-    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger2d" + collision.gameObject.tag);
+        
         if (collision.tag == "Player")
         {
             Current = Type;
@@ -45,7 +43,7 @@ public class ItemController : MonoBehaviour {
     private void Start()
     {
         StartPosition = transform.position;
-
+        UI = GameObject.Find("ItemUI").GetComponent<Image>();
     }
 
     private void Update()

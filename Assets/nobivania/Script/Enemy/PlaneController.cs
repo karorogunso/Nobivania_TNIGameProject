@@ -11,6 +11,7 @@ public class PlaneController : MonoBehaviour {
     public float LoopTime = 3f;
 
     private bool IsFlip = false;
+    [SerializeField]
     private bool IsAttack = false;
 
 
@@ -30,6 +31,7 @@ public class PlaneController : MonoBehaviour {
         if (!IsAttack)
         {
             Vector3 target = Player.position;
+            target.z = TriggerBox.bounds.min.z;
             if (TriggerBox.bounds.Contains(target))
             {
                 IsAttack = true;
@@ -55,11 +57,13 @@ public class PlaneController : MonoBehaviour {
         IsAttack = false;
         IsFlip = !IsFlip;
     }
+#if UNITY_EDITOR
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, 0.1f);
     }
+#endif
 
     
 }
