@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
 	public float maxSpeed = 7;
 	public float jumpTakeOffSpeed = 7;
+
+	public float maxJump = 300;
 	public bool facing = true;
     public float JumpForce = 100f;
 
@@ -37,8 +39,9 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = new Vector2(move * maxSpeed, playerRigidbody.velocity.y);
 
         bool jump = Input.GetButtonDown("Jump");
-        if (jump)
+        if (jump){
             playerRigidbody.AddForce(new Vector2(0, JumpForce));
+		}
         AudioSource audio = new AudioSource(); //Keep Audio in Game Engine Source.
         
 
