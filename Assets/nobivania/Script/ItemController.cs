@@ -20,6 +20,8 @@ public class ItemController : MonoBehaviour {
 
     private Image UI;
 
+    public Animator PlayerAnimator;
+
 #if UNITY_EDITOR
     private void OnGUI()
     {
@@ -37,6 +39,8 @@ public class ItemController : MonoBehaviour {
             UI.sprite = GetComponent<SpriteRenderer>().sprite;
             UI.color = new Color(1, 1, 1, 1);
             Destroy(this.gameObject);
+            PlayerAnimator.SetBool("Cannon", Type == ItemType.AirCannon);
+            
         }
     }
 
@@ -44,6 +48,7 @@ public class ItemController : MonoBehaviour {
     {
         StartPosition = transform.position;
         UI = GameObject.Find("ItemUI").GetComponent<Image>();
+        PlayerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     private void Update()
