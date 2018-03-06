@@ -33,14 +33,14 @@ public class BoatController : MonoBehaviour {
 	void Update () {
         if((IsControl && ItemController.Current == ItemType.RemoteControl))
         {
-            float h = Input.GetAxis("Horizontal");
+            bool run = Input.GetButton("Item");
             bool jump = Input.GetButtonDown("Jump");
 
-            Velocity += h;
+            Velocity += run ? 1 : 0;
             Velocity = Mathf.Clamp(Velocity, -MaxSpeed, MaxSpeed);
             Vector2 moveVector = new Vector2(Velocity,0);
             moveVector *= Time.deltaTime;
-            
+            //rigidbody.velocity = new Vector2(run ? 1 : 0, rigidbody.velocity.y);
             if(moveVector.sqrMagnitude > 0.001f) 
                 rigidbody.MovePosition(moveVector + new Vector2(transform.position.x, transform.position.y));
             if (jump)

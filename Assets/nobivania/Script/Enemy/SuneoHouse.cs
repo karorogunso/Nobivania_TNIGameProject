@@ -39,7 +39,8 @@ public class SuneoHouse : MonoBehaviour {
         }
         else
         {
-            animator.SetBool("Hit", true);
+            //animator.SetBool("Hit", true);
+            animator.Play("Hit");
         }
     }
 

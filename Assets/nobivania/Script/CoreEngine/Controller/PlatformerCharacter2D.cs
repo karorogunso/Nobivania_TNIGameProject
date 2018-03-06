@@ -56,6 +56,7 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
+
             m_Grounded = false;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground

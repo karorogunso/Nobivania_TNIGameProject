@@ -317,7 +317,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 122427952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.83, y: 2.7292578, z: 0}
+  m_LocalPosition: {x: 54.26, y: 2.7292578, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1565,7 +1565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4405629658360122, guid: 438f7d31b2c4e3b43ba89b456859c2f7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.99
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4405629658360122, guid: 438f7d31b2c4e3b43ba89b456859c2f7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1595,6 +1595,11 @@ Prefab:
         type: 2}
       propertyPath: JumpForce
       value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 114507395266123540, guid: 438f7d31b2c4e3b43ba89b456859c2f7,
+        type: 2}
+      propertyPath: m_WhatIsGround.m_Bits
+      value: 32768
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438f7d31b2c4e3b43ba89b456859c2f7, type: 2}
@@ -1787,7 +1792,7 @@ GameObject:
   - component: {fileID: 1352788237}
   - component: {fileID: 1352788236}
   - component: {fileID: 1352788235}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9276,11 +9281,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114245885121993736, guid: 0dd92229a044aeb45ba745e90db48e3e,
-        type: 2}
-      propertyPath: MinX
-      value: 8.49
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0dd92229a044aeb45ba745e90db48e3e, type: 2}
   m_IsPrefabParent: 0
@@ -9309,7 +9309,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
