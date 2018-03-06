@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             var boatController = collision.gameObject.GetComponent<BoatController>();
             boatController.OnPlayerAttach();
+            animator.Play("Idle");
         }
 
         if(collision.tag == "Enemy")

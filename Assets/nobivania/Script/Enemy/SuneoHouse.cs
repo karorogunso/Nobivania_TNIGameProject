@@ -49,7 +49,8 @@ public class SuneoHouse : MonoBehaviour {
         Vector3 min = collider.bounds.min;
         Vector3 max = collider.bounds.max;
         Vector3 target = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
-        Instantiate(Explosion, target, Quaternion.identity);
+        GameObject explore = Instantiate(Explosion, target, Quaternion.identity);
+        Destroy(explore, 1f);
         if(Time.time - StartBreaking < BreakTime)
         {
             CurrentLoop++;
