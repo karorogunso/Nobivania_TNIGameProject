@@ -342,6 +342,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   PlayerAnimator: {fileID: 0}
+  PlayerAudioSource: {fileID: 0}
+  PlayerController: {fileID: 0}
 --- !u!1001 &193455619
 Prefab:
   m_ObjectHideFlags: 0
@@ -380,6 +382,10 @@ Prefab:
     - target: {fileID: 4444255543608156, guid: 1a503cc6e51a73245a729b12973a402f, type: 2}
       propertyPath: m_RootOrder
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657415375062834, guid: 1a503cc6e51a73245a729b12973a402f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a503cc6e51a73245a729b12973a402f, type: 2}
@@ -426,6 +432,11 @@ Prefab:
     - target: {fileID: 1964100909069502, guid: c945de39d1217ae4fa545da3b9e3cd01, type: 2}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334677980178408, guid: c945de39d1217ae4fa545da3b9e3cd01,
+        type: 2}
+      propertyPath: ExitForce
+      value: 700
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c945de39d1217ae4fa545da3b9e3cd01, type: 2}
@@ -1225,6 +1236,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   PlayerAnimator: {fileID: 0}
+  PlayerAudioSource: {fileID: 0}
+  PlayerController: {fileID: 0}
 --- !u!1 &902327068
 GameObject:
   m_ObjectHideFlags: 0

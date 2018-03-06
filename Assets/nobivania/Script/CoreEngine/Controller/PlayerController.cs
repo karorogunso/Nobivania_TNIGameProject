@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
+
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
 	public float maxSpeed = 7;
@@ -24,13 +28,22 @@ public class PlayerController : MonoBehaviour
 	private Rigidbody2D playerRigidbody;
 	private GameObject player;
 	private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
 
 	private Animator animator;
 
     public BoxCollider2D suneoTrigger;
     public SuneoHouse suneoHouse;
 
-    
+    public float NormalGravity = 1f;
+    public float FlyGravity = 0.5f;
+
+    public AudioClip JumpSound;
+    public AudioClip DeadSound;
+    public AudioClip PickupSound;
+    public AudioClip ShootSound;
+
+
     private bool m_Grounded;            // Whether or not the player is grounded.
     const float k_GroundedRadius = 0.1f; // Radius of the overlap circle to determine if grounded
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
@@ -47,6 +60,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -74,6 +88,7 @@ public class PlayerController : MonoBehaviour
             // If the player should jump...
             if (m_Grounded && jump)// && animator.GetBool("Ground"))
             {
+                audioSource.PlayOneShot(JumpSound);
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 //animator.SetBool("Ground", false);
@@ -104,7 +119,22 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButton("Item"))
             OnUseItem();
+        if (Input.GetButtonDown("Item"))
+        {
+            if (ItemController.Current == ItemType.BambooCopter)
+            {
+                playerRigidbody.gravityScale = FlyGravity;
+            }
+        }
+        if (Input.GetButtonUp("Item"))
+        {
+            if (ItemController.Current == ItemType.BambooCopter)
+            {
+                playerRigidbody.gravityScale = NormalGravity;
+            }
+        }
 	}
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -122,18 +152,17 @@ public class PlayerController : MonoBehaviour
             OnDamage();
         }
     }
-
-
     public void OnUseItem()
     {
         switch (ItemController.Current)
         {
-            case ItemType.Empty:
-            case ItemType.TestNote:
-            case ItemType.Star:
-                break;
             case ItemType.BambooCopter:
-                playerRigidbody.AddForce(new Vector2(0, JumpForce * 2));
+                // jump trick
+                if (m_Grounded)
+                {
+                    m_Grounded = false;
+                    playerRigidbody.AddForce(new Vector2(0, JumpForce));
+                }
                 break;
             case ItemType.AirCannon:
                 if(Time.time > NextFire)
@@ -165,6 +194,8 @@ public class PlayerController : MonoBehaviour
         NextFire = Time.time + AttackCoolDown;
         //animator.SetBool("Attack",true);
         animator.Play("Cannon Attack");
+        audioSource.PlayOneShot(ShootSound);
+
         if (!suneoTrigger)
             suneoTrigger = GameObject.Find("SuneoTrigger").GetComponent<BoxCollider2D>();
         Vector3 myPosition = transform.position;
@@ -179,9 +210,20 @@ public class PlayerController : MonoBehaviour
 
     public void OnDamage()
     {
+        audioSource.PlayOneShot(DeadSound);
         animator.Play("Hurt");
-        Invoke("Reload", 2);
+        Invoke("FillBlack",1.5f);
+        Invoke("Reload", 4);
+        BonusController.Bonus = 0;
         IsLock = true;
+    }
+
+    public void FillBlack()
+    {
+        var black = GameObject.Find("BlackFill");
+        var imBlack = black.GetComponent<Image>();
+        imBlack.enabled = true;
+        
     }
     public void Reload()
     {
