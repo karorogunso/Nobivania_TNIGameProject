@@ -48,19 +48,14 @@ public class PlayerController : MonoBehaviour
         //Alex (Character) Flip (2D Flip)
         if (move > 0 && !facing || (Input.GetButtonDown("Horizontal"))) // for turning right
         {
-            Flip();
+            facing = !facing;
+            spriteRenderer.flipX = facing;
         }
         else if (move < 0 && facing) // for turning left
         {
-            Flip();
+            facing = !facing;
+            spriteRenderer.flipX = facing;
         }
 	}
-
-	void Flip() 
-    {
-        facing = !facing;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }   
+    
 }
