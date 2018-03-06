@@ -31,7 +31,7 @@ public class BoatController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if((IsControl || ItemController.Current == ItemType.RemoteControl))
+        if((IsControl && ItemController.Current == ItemType.RemoteControl))
         {
             float h = Input.GetAxis("Horizontal");
             bool jump = Input.GetButtonDown("Jump");
@@ -44,11 +44,14 @@ public class BoatController : MonoBehaviour {
             if(moveVector.sqrMagnitude > 0.001f) 
                 rigidbody.MovePosition(moveVector + new Vector2(transform.position.x, transform.position.y));
             if (jump)
-                rigidbody.AddForce(new Vector2(0, JumpForce) );
+                rigidbody.AddForce(new Vector2(0, JumpForce));
             Player.transform.position = PlayerHolder.position;
         }
-        Velocity -= DecayRate;
-        Velocity = Mathf.Max(Velocity,0);
+        if (Velocity > 0)
+            Velocity -= DecayRate;
+        else
+            Velocity += DecayRate;
+       
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,6 +68,7 @@ public class BoatController : MonoBehaviour {
         var controller = Player.GetComponent<PlayerController>();
         controller.enabled = false;
         IsControl = true;
+        
     }
 
     public void OnPlayerDeattach()
