@@ -9,7 +9,9 @@ public class BoatController : MonoBehaviour {
     public float Speed = 1f;
     public float MaxSpeed = 10f;
     public float DecayRate = 0.1f;
+    
     public bool IsControl = false;
+    public float ExitForce = 450f;
     public Transform PlayerHolder;
     [SerializeField]
     private float Velocity;
@@ -23,11 +25,13 @@ public class BoatController : MonoBehaviour {
         if (!PlayerHolder)
             PlayerHolder = GameObject.Find("PlayerHolder").transform;
         rigidbody = GetComponent<Rigidbody2D>();
+        if (!Player)
+            Player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if((IsControl && ItemController.Current == ItemType.RemoteControl))
+        if((IsControl || ItemController.Current == ItemType.RemoteControl))
         {
             float h = Input.GetAxis("Horizontal");
             bool jump = Input.GetButtonDown("Jump");
@@ -41,10 +45,20 @@ public class BoatController : MonoBehaviour {
                 rigidbody.MovePosition(moveVector + new Vector2(transform.position.x, transform.position.y));
             if (jump)
                 rigidbody.AddForce(new Vector2(0, JumpForce) );
+            Player.transform.position = PlayerHolder.position;
         }
         Velocity -= DecayRate;
         Velocity = Mathf.Max(Velocity,0);
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.name == "BoatExit")
+        {
+            // exit form boat
+            OnPlayerDeattach();
+        }
+    }
 
     void OnPlayerAttach()
     {
@@ -58,5 +72,7 @@ public class BoatController : MonoBehaviour {
         IsControl = false;
         var controller = Player.GetComponent<PlayerController>();
         controller.enabled = true;
+        Rigidbody2D rigid2D = Player.GetComponent<Rigidbody2D>();
+        rigid2D.AddForce(new Vector2(0,ExitForce));
     }
 }
