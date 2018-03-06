@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/nobivania/Scene/DevPlayground.unity
     guid: 31f79b9fcc3fa1648bde0ed6fe0df2b3
-  - enabled: 1
-    path: Assets/nobivania/Scene/MainMenu.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/7fd099d21e1de1d4f971e914127f1119
     guid: 7fd099d21e1de1d4f971e914127f1119
   - enabled: 1
     path: Assets/nobivania/Scene/Game/Act2_Scene1.unity
