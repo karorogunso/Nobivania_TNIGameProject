@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95531047580699314}
   m_Layer: 0
   m_Name: Anywhere Door
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

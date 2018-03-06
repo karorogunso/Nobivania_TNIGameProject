@@ -19,6 +19,9 @@ public class BonusController : MonoBehaviour {
         if(collision.tag == "Player")
         {
             Bonus++;
+            var audio = GetComponent<AudioSource>();
+            if (audio)
+                audio.Play();
             Destroy(this.gameObject);
         }
     }
