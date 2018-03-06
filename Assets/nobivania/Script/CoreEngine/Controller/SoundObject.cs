@@ -5,10 +5,13 @@ using UnityEngine;
 public class SoundObject : MonoBehaviour {
 
     public float speed;
+    public float miny;
+    public float maxy;
     Rigidbody2D rb;
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        transform.position = new Vector3(transform.position.x, Random.Range(miny,maxy), 0);
         rb.velocity = transform.right * speed;
     }
 	
