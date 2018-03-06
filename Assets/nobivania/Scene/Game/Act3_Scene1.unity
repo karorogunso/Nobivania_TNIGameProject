@@ -377,6 +377,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114477080940034382, guid: 0f1e4479315c4f845b756cc3e75e9ee5,
+        type: 2}
+      propertyPath: NextLevel
+      value: Ending
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f1e4479315c4f845b756cc3e75e9ee5, type: 2}
   m_IsPrefabParent: 0
@@ -11121,6 +11126,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   PlayerAnimator: {fileID: 0}
+  PlayerAudioSource: {fileID: 0}
+  PlayerController: {fileID: 0}
 --- !u!1001 &2085298738
 Prefab:
   m_ObjectHideFlags: 0
