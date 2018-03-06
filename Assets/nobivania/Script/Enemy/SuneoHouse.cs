@@ -7,9 +7,13 @@ public class SuneoHouse : MonoBehaviour {
     public int HP = 3;
     public float BreakTime = 1f;
 
+    public GameObject Explosion;
+    public float LoopTime = 0.2f;
     private Animator animator;
 
     private new Collider2D collider;
+    private int CurrentLoop;
+    private float StartBreaking;
 
 	// Use this for initialization
 	void Start () {
@@ -28,11 +32,27 @@ public class SuneoHouse : MonoBehaviour {
         if(HP <= 0)
         {
             animator.SetBool("Break", true);
-            Destroy(collider, BreakTime);
+            Destroy(collider,BreakTime);
+            Destroy(this, BreakTime);
+            StartBreaking = Time.time;
+            ExplosionEffect();
         }
         else
         {
             animator.SetBool("Hit", true);
+        }
+    }
+
+    public void ExplosionEffect()
+    {
+        Vector3 min = collider.bounds.min;
+        Vector3 max = collider.bounds.max;
+        Vector3 target = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
+        Instantiate(Explosion, target, Quaternion.identity);
+        if(Time.time - StartBreaking < BreakTime)
+        {
+            CurrentLoop++;
+            Invoke("ExplosionEffect", LoopTime);
         }
     }
 }
