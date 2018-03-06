@@ -1105,6 +1105,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 61871745045192704, guid: 438f7d31b2c4e3b43ba89b456859c2f7,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438f7d31b2c4e3b43ba89b456859c2f7, type: 2}
   m_IsPrefabParent: 0
@@ -12215,6 +12220,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 61150836180073014, guid: 0f1e4479315c4f845b756cc3e75e9ee5,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114477080940034382, guid: 0f1e4479315c4f845b756cc3e75e9ee5,
+        type: 2}
+      propertyPath: NextLevel
+      value: Act2_Scene1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f1e4479315c4f845b756cc3e75e9ee5, type: 2}
   m_IsPrefabParent: 0
@@ -12811,21 +12826,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &1487751698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1487751696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc74ab4d504841428fecb632ddb84ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextLevel: Act1_Scene1
-  IsLock: 0
-  OpenSound: {fileID: 0}
-  LockSound: {fileID: 0}
 --- !u!1001 &1514143218
 Prefab:
   m_ObjectHideFlags: 0
