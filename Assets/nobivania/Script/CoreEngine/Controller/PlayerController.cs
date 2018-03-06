@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class PlayerController : MonoBehaviour
     public float JumpForce = 100f;
 
     [SerializeField]
-    private bool GodMod = false;
+    private bool GodMode = false;
+    private bool IsLock; // cannot walk
 
     //air cannon
     public float AttackCoolDown = 1f;
@@ -32,7 +34,6 @@ public class PlayerController : MonoBehaviour
     private bool m_Grounded;            // Whether or not the player is grounded.
     const float k_GroundedRadius = 0.1f; // Radius of the overlap circle to determine if grounded
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
-
 
     void Awake(){
 		playerRigidbody = GetComponent<Rigidbody2D> ();
@@ -61,10 +62,9 @@ public class PlayerController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
                 m_Grounded = true;
         }
-        //animator.SetBool("Ground", m_Grounded);
 
         // Set the vertical animation
-        //animator.SetFloat("vSpeed", playerRigidbody.velocity.y);
+        animator.SetFloat("vSpeed", playerRigidbody.velocity.y);
 
         // walk
 
@@ -80,8 +80,9 @@ public class PlayerController : MonoBehaviour
                 playerRigidbody.AddForce(new Vector2(0f, JumpForce));
             }
 		}
+        animator.SetBool("Ground", m_Grounded);
         AudioSource audio = new AudioSource(); //Keep Audio in Game Engine Source.
-        if(NextFire < Time.time)
+        if(NextFire < Time.time && !IsLock)
         {
             float move = Input.GetAxisRaw("Horizontal");
             animator.SetFloat("Speed", Mathf.Abs(move));
@@ -108,10 +109,16 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
+        
         if(collision.gameObject.name == "Boat")
         {
             var boatController = collision.gameObject.GetComponent<BoatController>();
             boatController.OnPlayerAttach();
+        }
+
+        if(collision.tag == "Enemy")
+        {
+            OnDamage();
         }
     }
 
@@ -165,6 +172,19 @@ public class PlayerController : MonoBehaviour
         if (!suneoHouse)
             suneoHouse = GameObject.Find("SuneoObject").GetComponent<SuneoHouse>();
         suneoHouse.OnDamage();
+
     }
     
+
+    public void OnDamage()
+    {
+        animator.Play("Hurt");
+        Invoke("Reload", 2);
+        IsLock = true;
+    }
+    public void Reload()
+    {
+        if(!GodMode)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

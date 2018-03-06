@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floor: {x: 0, y: 0, z: 0}
-  JumpForce: 100
+  JumpForce: 500
   Speed: 0.5
-  MaxSpeed: 2
+  MaxSpeed: 5
   DecayRate: 0.1
   IsControl: 0
   ExitForce: 450
