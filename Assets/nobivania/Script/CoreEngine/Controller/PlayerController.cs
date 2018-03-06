@@ -56,6 +56,17 @@ public class PlayerController : MonoBehaviour
             facing = !facing;
             spriteRenderer.flipX = facing;
         }
+
+
 	}
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.name == "boat")
+        {
+            var boatController = collision.gameObject.GetComponent<BoatController>();
+            boatController.OnPlayerAttach();
+        }
+    }
+
 }

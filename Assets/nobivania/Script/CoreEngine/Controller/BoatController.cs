@@ -60,14 +60,14 @@ public class BoatController : MonoBehaviour {
         }
     }
 
-    void OnPlayerAttach()
+    public void OnPlayerAttach()
     {
         var controller = Player.GetComponent<PlayerController>();
         controller.enabled = false;
         IsControl = true;
     }
 
-    void OnPlayerDeattach()
+    public void OnPlayerDeattach()
     {
         IsControl = false;
         var controller = Player.GetComponent<PlayerController>();
