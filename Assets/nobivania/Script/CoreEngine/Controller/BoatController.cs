@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BoatController : MonoBehaviour {
@@ -9,9 +10,10 @@ public class BoatController : MonoBehaviour {
     public Vector3 floor;
     public float JumpForce= 100f;
     public float Speed = 1f;
-    public float MaxSpeed = 10f;
-    public float DecayRate = 0.1f;
-    
+
+    //for scene 3
+    public Sprite RemoteSprite;
+
     public bool IsControl = false;
     public Vector2 ExitForce = new Vector2(0,450f);
     public Transform PlayerHolder;
@@ -21,9 +23,10 @@ public class BoatController : MonoBehaviour {
     private new Rigidbody2D rigidbody;
 
     public GameObject Player;
+    private Image UI;
 
     public bool m_Grounded;            
-    float k_GroundedRadius = 0.7f;
+    float k_GroundedRadius = 1f;
     [SerializeField] private LayerMask m_WhatIsGround;
 
     // Use this for initialization
@@ -31,6 +34,12 @@ public class BoatController : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Act3_Scene1") 
         {
             ItemController.Current = ItemType.RemoteControl;
+            if (RemoteSprite)
+            {
+                UI = GameObject.Find("ItemUI").GetComponent<Image>();
+                UI.color = new Color(1, 1, 1, 1);
+                UI.sprite = RemoteSprite;
+            }
         }
         floor = transform.position;
         if (!PlayerHolder)
@@ -59,7 +68,7 @@ public class BoatController : MonoBehaviour {
             if (m_Grounded)
             {
                 bool run = Input.GetButton("Item");
-                bool jump = Input.GetButtonDown("Jump");
+                bool jump = Input.GetButtonDown("Jump");   
                 Vector2 force = new Vector2(0, jump ? JumpForce : 0);
 
                 if(run)
@@ -89,6 +98,7 @@ public class BoatController : MonoBehaviour {
 
     public void OnPlayerDeattach()
     {
+        ItemController.Current = ItemType.Empty;
         IsControl = false;
         var controller = Player.GetComponent<PlayerController>();
         controller.enabled = true;
