@@ -1,7 +1,5 @@
 # Nobivania Project
+This Project become Open Source on Github because We want to share this to everyone.
 
-If you found any bug please use "Issues" to report
-
-Only 4 of us can access this source code. Don't share anyone else.
-
-Thanks you.
+Game Theme: Doraemon
+Style: 2D Platform, Pixel Arts
