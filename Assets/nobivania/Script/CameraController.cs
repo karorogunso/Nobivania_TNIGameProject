@@ -8,8 +8,9 @@ public class CameraController : MonoBehaviour {
     
     public float Smooth = 0.9f;
 
-
     public bool IsCutScene = false;
+
+    public float AspectMultiplyer = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,8 @@ public class CameraController : MonoBehaviour {
         {
             Player = GameObject.FindGameObjectWithTag("Player").transform;
         }
+
+        Camera.main.orthographicSize =   (1 / Camera.main.aspect) * AspectMultiplyer;
 	}
 	
 	// Update is called once per frame
