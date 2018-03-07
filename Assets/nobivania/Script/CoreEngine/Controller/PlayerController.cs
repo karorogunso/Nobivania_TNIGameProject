@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour
             OnDamage();
         }
     }
+
     public void OnUseItem()
     {
         switch (ItemController.Current)
