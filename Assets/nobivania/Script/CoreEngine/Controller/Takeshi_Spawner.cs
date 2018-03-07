@@ -28,7 +28,7 @@ public class Takeshi_Spawner : MonoBehaviour {
 	void Update () {
 		
 	}
-	void Falling()
+	public void Falling()
 	{
 		rb.simulated = true;
 		an.SetTrigger("GiantFalls");
