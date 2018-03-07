@@ -8,9 +8,15 @@ public class BonusDisplay : MonoBehaviour {
 
     public Sprite[] number;
 
+    public void Start()
+    {
+        Show();
+    }
+
     public void Show()
     {
         Image im = GetComponent<Image>();
         im.sprite = number[BonusController.Bonus];
+        
     }
 }
