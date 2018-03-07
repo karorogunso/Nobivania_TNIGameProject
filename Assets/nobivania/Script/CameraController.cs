@@ -7,13 +7,13 @@ public class CameraController : MonoBehaviour {
     public Transform Player;
     
     public float Smooth = 0.9f;
-    private Vector3 FixPoint;
+
 
     public bool IsCutScene = false;
 
 	// Use this for initialization
 	void Start () {
-        FixPoint = transform.position;
+        
         if(Player == null)
         {
             Player = GameObject.FindGameObjectWithTag("Player").transform;

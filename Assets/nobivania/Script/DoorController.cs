@@ -18,21 +18,30 @@ public class DoorController : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-	Debug.Log("Door Trigger Entered");
+	    Debug.Log("Door Trigger Entered");
         if (!IsLock)
         {
             if (OpenSound)
                 audioSource.PlayOneShot(OpenSound);
-            SceneManager.LoadScene(NextLevel);
+            Animator animator = GetComponent<Animator>();
+            animator.SetBool("Open", true);
+            Invoke("FillBlack",1.5f);
+            Invoke("LoadScene",4f);
         }
         else if (LockSound)
             audioSource.PlayOneShot(LockSound);
+    }
+
+    public void FillBlack()
+    {
+        PlayerController.FillBlack();
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(NextLevel);
     }
 }

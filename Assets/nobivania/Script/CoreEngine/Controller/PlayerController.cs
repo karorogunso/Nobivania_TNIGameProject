@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private float NextFire;
     
 	private Rigidbody2D playerRigidbody;
-	private GameObject player;
+
 	private SpriteRenderer spriteRenderer;
     private AudioSource audioSource;
 
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     }
     // Use this for initialization
     void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
+		//player = GameObject.FindGameObjectWithTag("Player");
         audioSource = GetComponent<AudioSource>();
 	}
 	
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
             }
 		}
         animator.SetBool("Ground", m_Grounded);
-        AudioSource audio = new AudioSource(); //Keep Audio in Game Engine Source.
+        
         if(NextFire < Time.time && !IsLock)
         {
             float move = Input.GetAxisRaw("Horizontal");
@@ -214,23 +214,27 @@ public class PlayerController : MonoBehaviour
     public void OnDamage()
     {
         audioSource.PlayOneShot(DeadSound);
-        animator.Play("Hurt");
-        Invoke("FillBlack",1.5f);
-        Invoke("Reload", 4);
-        BonusController.Bonus = 0;
-        IsLock = true;
+        if (!GodMode)
+        {
+            IsLock = true;
+            animator.Play("Hurt");
+            Invoke("FillBlack",1.5f);
+            Invoke("Reload", 4);
+            BonusController.Bonus = 0;
+            IsLock = true;
+
+        }
     }
 
-    public void FillBlack()
+    public static void FillBlack()
     {
         var black = GameObject.Find("BlackFill");
         var imBlack = black.GetComponent<Image>();
         imBlack.enabled = true;
         
     }
-    public void Reload()
+    public static void Reload()
     {
-        if(!GodMode)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

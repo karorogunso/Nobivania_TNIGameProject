@@ -51,20 +51,11 @@ public class BoatController : MonoBehaviour {
             bool run = Input.GetButton("Item");
             bool jump = Input.GetButtonDown("Jump");
 
-            Velocity += run ? 1 : 0;
-            Velocity = Mathf.Min(Velocity, MaxSpeed);
-            Vector2 moveVector = new Vector2(Velocity,0);
-            moveVector *= Time.fixedDeltaTime;
-            //rigidbody.velocity = new Vector2(run ? 1 : 0, rigidbody.velocity.y);
-            if(moveVector.sqrMagnitude > 0.001f) 
-                rigidbody.MovePosition(moveVector + new Vector2(transform.position.x, transform.position.y));
-            if (m_Grounded && jump)
-                rigidbody.AddForce(new Vector2(0, JumpForce));
+            Vector2 force = new Vector2(run ? Speed :0 , jump ? JumpForce : 0);
+            
+            rigidbody.AddForce(new Vector2(0, JumpForce));
             Player.transform.position = PlayerHolder.position;
         }
-        if (Velocity > 0)
-            Velocity -= DecayRate;
-       
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
