@@ -1562,12 +1562,12 @@ Prefab:
     - target: {fileID: 114334677980178408, guid: c945de39d1217ae4fa545da3b9e3cd01,
         type: 2}
       propertyPath: ExitForce.x
-      value: 100
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 114334677980178408, guid: c945de39d1217ae4fa545da3b9e3cd01,
         type: 2}
       propertyPath: ExitForce.y
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c945de39d1217ae4fa545da3b9e3cd01, type: 2}

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50643498900443388}
   - component: {fileID: 114153848511529334}
   - component: {fileID: 61170064773520484}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: text_nobi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
