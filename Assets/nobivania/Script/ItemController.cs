@@ -21,6 +21,8 @@ public class ItemController : MonoBehaviour {
     private Image UI;
 
     public Animator PlayerAnimator;
+    public AudioSource PlayerAudioSource;
+    public PlayerController PlayerController;
 
 #if UNITY_EDITOR
     private void OnGUI()
@@ -40,7 +42,7 @@ public class ItemController : MonoBehaviour {
             UI.color = new Color(1, 1, 1, 1);
             Destroy(this.gameObject);
             PlayerAnimator.SetBool("Cannon", Type == ItemType.AirCannon);
-            
+            PlayerAudioSource.PlayOneShot(PlayerController.PickupSound);
         }
     }
 
@@ -48,7 +50,10 @@ public class ItemController : MonoBehaviour {
     {
         StartPosition = transform.position;
         UI = GameObject.Find("ItemUI").GetComponent<Image>();
-        PlayerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerAudioSource = player.GetComponent<AudioSource>();
+        PlayerController = player.GetComponent<PlayerController>();
+        PlayerAnimator = player.GetComponent<Animator>();
     }
 
     private void Update()

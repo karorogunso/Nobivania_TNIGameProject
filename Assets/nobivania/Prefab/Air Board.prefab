@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212165096833456250}
   - component: {fileID: 61096696077791868}
   - component: {fileID: 114245885121993736}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Air Board
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601856256806316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 5, z: 1}
+  m_LocalPosition: {x: 22, y: 3.85, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  MinX: 17
+  MinX: 8.49
   MaxX: 37
 --- !u!212 &212165096833456250
 SpriteRenderer:

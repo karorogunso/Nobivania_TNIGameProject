@@ -23,8 +23,9 @@ public class DoorController : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+	Debug.Log("Door Trigger Entered");
         if (!IsLock)
         {
             if (OpenSound)

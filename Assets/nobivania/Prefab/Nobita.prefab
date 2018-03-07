@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 212102301147921054}
   - component: {fileID: 95834389977794820}
   - component: {fileID: 50425464473265000}
-  - component: {fileID: 61561783248039602}
   - component: {fileID: 114507395266123540}
+  - component: {fileID: 82495592928911756}
+  - component: {fileID: 61871745045192704}
   m_Layer: 0
   m_Name: Nobita
   m_TagString: Player
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1180017524467034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.88, y: 3.99, z: -1}
+  m_LocalPosition: {x: -7.649603, y: 2.2881055, z: -1}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +65,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61561783248039602
+--- !u!61 &61871745045192704
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -72,7 +73,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1180017524467034}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3794584c4ae8d46d78aa0d3d0eb4379c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -89,6 +90,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19, y: 0.36}
   m_EdgeRadius: 0
+--- !u!82 &82495592928911756
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180017524467034}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95834389977794820
 Animator:
   serializedVersion: 3
@@ -119,8 +200,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   jumpTakeOffSpeed: 7
-  facing: 1
-  JumpForce: 450
+  maxJump: 300
+  Facing: 1
+  JumpForce: 350
+  GodMode: 0
+  AttackCoolDown: 1
+  suneoTrigger: {fileID: 0}
+  suneoHouse: {fileID: 0}
+  NormalGravity: 1
+  FlyGravity: 0.5
+  JumpSound: {fileID: 8300000, guid: 3f8e32b71668b7b42b1b6f0b2eb42a9e, type: 3}
+  DeadSound: {fileID: 8300000, guid: 835feb1c42813244d85e4b7993ff3c7e, type: 3}
+  PickupSound: {fileID: 8300000, guid: 247cd1ee719e8154ea0cb4a9dc95e290, type: 3}
+  ShootSound: {fileID: 8300000, guid: 5ca4e0e36b441b743a9a4dbc0453ffe7, type: 3}
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!212 &212102301147921054
 SpriteRenderer:
   m_ObjectHideFlags: 1
