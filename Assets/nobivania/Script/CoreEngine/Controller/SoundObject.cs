@@ -12,7 +12,6 @@ public class SoundObject : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = new Vector3(startx, Random.Range(miny,maxy), 0);
         rb.velocity = transform.right * speed;
     }
 	

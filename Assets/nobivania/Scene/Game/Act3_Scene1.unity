@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.8
   delay: 3
+  enddelay: 30
 --- !u!50 &239227080
 Rigidbody2D:
   serializedVersion: 4
@@ -1305,6 +1306,7 @@ GameObject:
   - component: {fileID: 1594702796}
   - component: {fileID: 1594702795}
   - component: {fileID: 1594702794}
+  - component: {fileID: 1594702799}
   m_Layer: 0
   m_Name: Takeshi
   m_TagString: Untagged
@@ -1431,6 +1433,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1594702799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594702793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aede64924196c4a03bf227a933d7a150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1428108297404634, guid: 4eda46dd99178451db9d21d60a48782b, type: 2}
+  projectiledelay: 5
+  projectileperiod: 2
+  animdelay: 1
+  startdelay: 1
+  startx: 71.52
+  giantoffset: 5
+  starty: 8.5
+  miny: 4
+  maxy: 8.5
+  animdelay2: 1.5
+  animdelay3: 1
 --- !u!1001 &1610942639
 Prefab:
   m_ObjectHideFlags: 0
@@ -1448,7 +1473,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4074461143382264, guid: c945de39d1217ae4fa545da3b9e3cd01, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4074461143382264, guid: c945de39d1217ae4fa545da3b9e3cd01, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1487,7 +1512,7 @@ Prefab:
     - target: {fileID: 114334677980178408, guid: c945de39d1217ae4fa545da3b9e3cd01,
         type: 2}
       propertyPath: JumpForce
-      value: 450
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 114334677980178408, guid: c945de39d1217ae4fa545da3b9e3cd01,
         type: 2}
@@ -1502,7 +1527,7 @@ Prefab:
     - target: {fileID: 114334677980178408, guid: c945de39d1217ae4fa545da3b9e3cd01,
         type: 2}
       propertyPath: Speed
-      value: 3.75
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114334677980178408, guid: c945de39d1217ae4fa545da3b9e3cd01,
         type: 2}
@@ -1513,6 +1538,26 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 50053449628340412, guid: c945de39d1217ae4fa545da3b9e3cd01,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61036224324136824, guid: c945de39d1217ae4fa545da3b9e3cd01,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.13181698
+      objectReference: {fileID: 0}
+    - target: {fileID: 61036224324136824, guid: c945de39d1217ae4fa545da3b9e3cd01,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.9889467
+      objectReference: {fileID: 0}
+    - target: {fileID: 61036224324136824, guid: c945de39d1217ae4fa545da3b9e3cd01,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.26999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c945de39d1217ae4fa545da3b9e3cd01, type: 2}

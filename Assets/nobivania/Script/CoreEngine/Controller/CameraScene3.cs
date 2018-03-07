@@ -6,11 +6,17 @@ public class CameraScene3 : MonoBehaviour {
 
 	public float speed;
 	public float delay;
+	public float enddelay;
 	Rigidbody2D rb;
+	CameraController othercamcon;
+	CameraScene3 thiscamcon;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
+		othercamcon = GetComponent<CameraController>();
+		thiscamcon = GetComponent<CameraScene3>();
 		Invoke("walk", delay);
+		Invoke("stop", enddelay);
 	}
 	
 	// Update is called once per frame
@@ -20,5 +26,12 @@ public class CameraScene3 : MonoBehaviour {
 	void walk()
 	{
 		rb.velocity = transform.right * speed;
+	}
+	void stop()
+	{
+		rb.velocity = transform.right * 0;
+		othercamcon.enabled = true;
+		thiscamcon.enabled = false;
+		
 	}
 }
