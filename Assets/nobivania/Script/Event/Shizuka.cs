@@ -9,7 +9,7 @@ public class Shizuka : MonoBehaviour {
 
     public GameObject RequestPopup;
     public DoorController Door;
-
+    public AudioClip ThankyouSound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -29,5 +29,11 @@ public class Shizuka : MonoBehaviour {
         UI = GameObject.Find("ItemUI").GetComponent<Image>();
         UI.color = new Color(1, 1, 1, 0);
         Door.IsLock = false;
+        if (ThankyouSound)
+        {
+            AudioSource source = GetComponent<AudioSource>();
+            source.PlayOneShot(ThankyouSound);
+        }
+        
     }
 }
