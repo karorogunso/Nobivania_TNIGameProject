@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BoatController : MonoBehaviour {
@@ -9,7 +10,10 @@ public class BoatController : MonoBehaviour {
     public Vector3 floor;
     public float JumpForce= 100f;
     public float Speed = 1f;
-    
+
+    //for scene 3
+    public Sprite RemoteSprite;
+
     public bool IsControl = false;
     public Vector2 ExitForce = new Vector2(0,450f);
     public Transform PlayerHolder;
@@ -19,6 +23,7 @@ public class BoatController : MonoBehaviour {
     private new Rigidbody2D rigidbody;
 
     public GameObject Player;
+    private Image UI;
 
     public bool m_Grounded;            
     float k_GroundedRadius = 1f;
@@ -29,6 +34,12 @@ public class BoatController : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Act3_Scene1") 
         {
             ItemController.Current = ItemType.RemoteControl;
+            if (RemoteSprite)
+            {
+                UI = GameObject.Find("ItemUI").GetComponent<Image>();
+                UI.color = new Color(1, 1, 1, 1);
+                UI.sprite = RemoteSprite;
+            }
         }
         floor = transform.position;
         if (!PlayerHolder)
@@ -87,6 +98,7 @@ public class BoatController : MonoBehaviour {
 
     public void OnPlayerDeattach()
     {
+        ItemController.Current = ItemType.Empty;
         IsControl = false;
         var controller = Player.GetComponent<PlayerController>();
         controller.enabled = true;

@@ -36,6 +36,8 @@ public class SuneoHouse : MonoBehaviour {
             Destroy(this, BreakTime);
             StartBreaking = Time.time;
             ExplosionEffect();
+            Animator tsuAni = GameObject.Find("Tsuneo").GetComponent<Animator>();
+            tsuAni.SetTrigger("Dead");
         }
         else
         {
@@ -51,6 +53,7 @@ public class SuneoHouse : MonoBehaviour {
         Vector3 target = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
         GameObject explore = Instantiate(Explosion, target, Quaternion.identity);
         Destroy(explore, 1f);
+
         if(Time.time - StartBreaking < BreakTime)
         {
             CurrentLoop++;
