@@ -8,6 +8,7 @@ public class CameraScene3 : MonoBehaviour {
 	public float delay;
 	public float enddelay;
 	Rigidbody2D rb;
+	public float AspectMultiplyer = 1f;
 	CameraController othercamcon;
 	CameraScene3 thiscamcon;
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class CameraScene3 : MonoBehaviour {
 		thiscamcon = GetComponent<CameraScene3>();
 		Invoke("walk", delay);
 		Invoke("stop", enddelay);
+		//Camera.main.orthographicSize =   (1 / Camera.main.aspect) * AspectMultiplyer;
 	}
 	
 	// Update is called once per frame

@@ -474,9 +474,34 @@ Prefab:
       propertyPath: AspectMultiplyer
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114209444202765878, guid: 9cb4cc029f42e1a4dbfc5f7550bca2c0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cb4cc029f42e1a4dbfc5f7550bca2c0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &580671805 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1959590756659560, guid: 9cb4cc029f42e1a4dbfc5f7550bca2c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 580671804}
+--- !u!114 &580671806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 580671805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da90588021224754a3e4312db3cecbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  delay: 3
+  enddelay: 30
+  AspectMultiplyer: 3.5
 --- !u!1001 &608117986
 Prefab:
   m_ObjectHideFlags: 0
