@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DoorController : MonoBehaviour {
 
@@ -37,7 +38,9 @@ public class DoorController : MonoBehaviour {
 
     public void FillBlack()
     {
-        PlayerController.FillBlack();
+        var black = GameObject.Find("BlackFill");
+        var imBlack = black.GetComponent<Image>();
+        imBlack.enabled = true;
     }
 
     public void LoadScene()

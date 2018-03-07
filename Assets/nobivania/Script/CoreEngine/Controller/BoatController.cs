@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class BoatController : MonoBehaviour {
 
@@ -11,7 +13,7 @@ public class BoatController : MonoBehaviour {
     public float DecayRate = 0.1f;
     
     public bool IsControl = false;
-    public float ExitForce = 450f;
+    public Vector2 ExitForce = new Vector2(0,450f);
     public Transform PlayerHolder;
     [SerializeField]
     private float Velocity;
@@ -26,6 +28,10 @@ public class BoatController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        if (SceneManager.GetActiveScene().name == "Act3_Scene1") 
+        {
+            ItemController.Current = ItemType.RemoteControl;
+        }
         floor = transform.position;
         if (!PlayerHolder)
             PlayerHolder = GameObject.Find("PlayerHolder").transform;
@@ -46,14 +52,20 @@ public class BoatController : MonoBehaviour {
             if (colliders[i].gameObject != gameObject)
                 m_Grounded = true;
         }
-        if ((IsControl && ItemController.Current == ItemType.RemoteControl))
-        {
-            bool run = Input.GetButton("Item");
-            bool jump = Input.GetButtonDown("Jump");
 
-            Vector2 force = new Vector2(run ? Speed :0 , jump ? JumpForce : 0);
-            
-            rigidbody.AddForce(new Vector2(0, JumpForce));
+        if ((IsControl && ItemController.Current == ItemType.RemoteControl) )
+        {
+
+            if (m_Grounded)
+            {
+                bool run = Input.GetButton("Item");
+                bool jump = Input.GetButtonDown("Jump");
+                Vector2 force = new Vector2(0, jump ? JumpForce : 0);
+
+                if(run)
+                    rigidbody.velocity = new Vector2(Speed, rigidbody.velocity.y);
+                rigidbody.AddForce(force);
+            }
             Player.transform.position = PlayerHolder.position;
         }
 	}
@@ -81,6 +93,6 @@ public class BoatController : MonoBehaviour {
         var controller = Player.GetComponent<PlayerController>();
         controller.enabled = true;
         Rigidbody2D rigid2D = Player.GetComponent<Rigidbody2D>();
-        rigid2D.AddForce(new Vector2(0,ExitForce));
+        rigid2D.AddForce(ExitForce);
     }
 }

@@ -81,8 +81,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("vSpeed", playerRigidbody.velocity.y);
 
         // walk
-
-
+        
         bool jump = Input.GetButtonDown("Jump");
         if (jump){
             // If the player should jump...
@@ -202,11 +201,14 @@ public class PlayerController : MonoBehaviour
         if (!suneoTrigger)
             suneoTrigger = GameObject.Find("SuneoTrigger").GetComponent<BoxCollider2D>();
         Vector3 myPosition = transform.position;
-        myPosition.z = suneoTrigger.bounds.min.z;
-        suneoTrigger.bounds.Contains(myPosition);
-        if (!suneoHouse)
-            suneoHouse = GameObject.Find("SuneoObject").GetComponent<SuneoHouse>();
-        suneoHouse.OnDamage();
+        if (Facing)
+        {
+            myPosition.z = suneoTrigger.bounds.min.z;
+            suneoTrigger.bounds.Contains(myPosition);
+            if (!suneoHouse)
+                suneoHouse = GameObject.Find("SuneoObject").GetComponent<SuneoHouse>();
+            suneoHouse.OnDamage();
+        }
 
     }
     
@@ -226,14 +228,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public static void FillBlack()
+    public void FillBlack()
     {
         var black = GameObject.Find("BlackFill");
         var imBlack = black.GetComponent<Image>();
         imBlack.enabled = true;
         
     }
-    public static void Reload()
+    public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
