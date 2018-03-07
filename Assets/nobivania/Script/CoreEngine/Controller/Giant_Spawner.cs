@@ -27,6 +27,7 @@ public class Giant_Spawner : MonoBehaviour {
 	}
 	void LaunchProjectile()
 	{
+		rb.simulated = false;
 		CancelInvoke("StartWalking");
 		CancelInvoke("StopWalking");
 		CancelInvoke("StopWalkingStill");

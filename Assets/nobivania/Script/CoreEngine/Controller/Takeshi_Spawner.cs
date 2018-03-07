@@ -8,18 +8,20 @@ public class Takeshi_Spawner : MonoBehaviour {
 	public float projectiledelay;
 	public float projectileperiod;
 	public float animdelay;
+	public float startdelay;
 	public float startx;
 	public float giantoffset;
 	public float starty;
 	public float miny;
 	public float maxy;
+	public float animdelay2;
+	public float animdelay3;
 	Rigidbody2D rb;
 	Animator an;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		an = GetComponent<Animator>();
-		Invoke("Falling", projectiledelay);
 	}
 	
 	// Update is called once per frame
@@ -30,18 +32,26 @@ public class Takeshi_Spawner : MonoBehaviour {
 	{
 		rb.simulated = true;
 		an.SetTrigger("GiantFalls");
-		Invoke("LaunchProjectileFirst", animdelay);
-		Instantiate(prefab);
+		Invoke("LaunchFirst", animdelay);
 	}
 	void LaunchFirst()
 	{
-		Instantiate(prefab, new Vector3(startx, starty, 0), Quaternion.identity);
+		rb.simulated = false;
 		an.SetTrigger("GiantDrink");
-		InvokeRepeating("LaunchProjectileFirst", animdelay, projectileperiod);
+		InvokeRepeating("LaunchProjectile", projectiledelay, projectileperiod);
+		Invoke("LaunchFirstItem", animdelay2);
+	}
+	void LaunchFirstItem()
+	{
+		Instantiate(prefab, new Vector3(startx, starty, 0), Quaternion.identity);
 	}
 	void LaunchProjectile()
 	{
 		an.SetTrigger("GiantShout");
+		Invoke("LaunchProjectileItem", animdelay2);
+	}
+	void LaunchProjectileItem()
+	{
 		Instantiate(prefab, new Vector3(startx-giantoffset, Random.Range(miny,maxy), 0), Quaternion.identity);
 	}
 }
