@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour {
             Player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        Camera.main.orthographicSize =   (1 / Camera.main.aspect) * AspectMultiplyer;
+        //Camera.main.orthographicSize =   (1 / Camera.main.aspect) * AspectMultiplyer;
 	}
 	
 	// Update is called once per frame

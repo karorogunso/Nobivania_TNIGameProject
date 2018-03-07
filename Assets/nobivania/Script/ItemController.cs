@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine.UI;
 
 public class ItemController : MonoBehaviour {
@@ -22,14 +22,14 @@ public class ItemController : MonoBehaviour {
 
     public Animator PlayerAnimator;
     public AudioSource PlayerAudioSource;
-    public PlayerController PlayerController;
+    public PlayerController playerController;
 
-#if UNITY_EDITOR
-    private void OnGUI()
-    {
-        FloatingCurve = EditorGUILayout.CurveField(FloatingCurve);
-    }
-#endif
+//#if UNITY_EDITOR
+//    private void OnGUI()
+///    {
+ //       FloatingCurve = EditorGUILayout.CurveField(FloatingCurve);
+//    }
+//#endif
 
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +42,7 @@ public class ItemController : MonoBehaviour {
             UI.color = new Color(1, 1, 1, 1);
             Destroy(this.gameObject);
             PlayerAnimator.SetBool("Cannon", Type == ItemType.AirCannon);
-            PlayerAudioSource.PlayOneShot(PlayerController.PickupSound);
+            PlayerAudioSource.PlayOneShot(playerController.PickupSound);
         }
     }
 
@@ -52,7 +52,7 @@ public class ItemController : MonoBehaviour {
         UI = GameObject.Find("ItemUI").GetComponent<Image>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         PlayerAudioSource = player.GetComponent<AudioSource>();
-        PlayerController = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<PlayerController>();
         PlayerAnimator = player.GetComponent<Animator>();
     }
 
