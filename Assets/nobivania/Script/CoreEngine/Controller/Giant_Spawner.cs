@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Giant_Spawner : MonoBehaviour {
 
-	public GameObject prefab;
 	public float projectiledelay;
-	public float projectileperiod;
 	public float speed;
 	public float distanceperstep;
 	public float updownspeed;
@@ -17,7 +15,7 @@ public class Giant_Spawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
-		InvokeRepeating("LaunchProjectile", projectiledelay, projectileperiod);
+		Invoke("LaunchProjectile", projectiledelay);
 		InvokeRepeating("StartWalking", delay, (period*2)+periodoffset);
 		InvokeRepeating("StopWalking", delay+period, (period*2)+periodoffset);
 		InvokeRepeating("StopWalkingStill", delay+period*2, (period*2)+periodoffset);
@@ -31,7 +29,7 @@ public class Giant_Spawner : MonoBehaviour {
 	{
 		CancelInvoke("StartWalking");
 		CancelInvoke("StopWalking");
-		Instantiate(prefab);
+		CancelInvoke("StopWalkingStill");
 	}
 	void StartWalking()
 	{
