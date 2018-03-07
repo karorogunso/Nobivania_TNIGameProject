@@ -220,12 +220,12 @@ public class PlayerController : MonoBehaviour
         if (!GodMode)
         {
             IsLock = true;
-            animator.Play("Hurt");
+            animator.SetBool("Hurt", true);
             Invoke("FillBlack",1.5f);
             Invoke("Reload", 4);
             BonusController.Bonus = 0;
             IsLock = true;
-
+            ItemController.Current = ItemType.Empty;
         }
     }
 

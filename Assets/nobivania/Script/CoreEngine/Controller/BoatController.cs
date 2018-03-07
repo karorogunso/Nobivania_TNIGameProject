@@ -9,8 +9,6 @@ public class BoatController : MonoBehaviour {
     public Vector3 floor;
     public float JumpForce= 100f;
     public float Speed = 1f;
-    public float MaxSpeed = 10f;
-    public float DecayRate = 0.1f;
     
     public bool IsControl = false;
     public Vector2 ExitForce = new Vector2(0,450f);
@@ -23,7 +21,7 @@ public class BoatController : MonoBehaviour {
     public GameObject Player;
 
     public bool m_Grounded;            
-    float k_GroundedRadius = 0.7f;
+    float k_GroundedRadius = 1f;
     [SerializeField] private LayerMask m_WhatIsGround;
 
     // Use this for initialization
@@ -59,7 +57,7 @@ public class BoatController : MonoBehaviour {
             if (m_Grounded)
             {
                 bool run = Input.GetButton("Item");
-                bool jump = Input.GetButtonDown("Jump");
+                bool jump = Input.GetButtonDown("Jump");   
                 Vector2 force = new Vector2(0, jump ? JumpForce : 0);
 
                 if(run)
